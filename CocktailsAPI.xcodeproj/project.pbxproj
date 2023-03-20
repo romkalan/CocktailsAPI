@@ -13,6 +13,7 @@
 		AD78778A29C884D5001FF0A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD78778829C884D5001FF0A6 /* Main.storyboard */; };
 		AD78778C29C884D6001FF0A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD78778B29C884D6001FF0A6 /* Assets.xcassets */; };
 		AD78778F29C884D6001FF0A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD78778D29C884D6001FF0A6 /* LaunchScreen.storyboard */; };
+		AD78779A29C8858A001FF0A6 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD78779929C8858A001FF0A6 /* Drink.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AD78778B29C884D6001FF0A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD78778E29C884D6001FF0A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD78779029C884D6001FF0A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD78779929C8858A001FF0A6 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		AD78778129C884D5001FF0A6 /* CocktailsAPI */ = {
 			isa = PBXGroup;
 			children = (
-				AD78778229C884D5001FF0A6 /* AppDelegate.swift */,
-				AD78778429C884D5001FF0A6 /* SceneDelegate.swift */,
-				AD78778629C884D5001FF0A6 /* ViewController.swift */,
-				AD78778829C884D5001FF0A6 /* Main.storyboard */,
+				AD78779B29C88593001FF0A6 /* Models */,
+				AD78779629C884E0001FF0A6 /* App */,
+				AD78779729C8850F001FF0A6 /* ViewControllers */,
+				AD78779829C8851E001FF0A6 /* Storyboards */,
 				AD78778B29C884D6001FF0A6 /* Assets.xcassets */,
-				AD78778D29C884D6001FF0A6 /* LaunchScreen.storyboard */,
-				AD78779029C884D6001FF0A6 /* Info.plist */,
 			);
 			path = CocktailsAPI;
+			sourceTree = "<group>";
+		};
+		AD78779629C884E0001FF0A6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AD78778229C884D5001FF0A6 /* AppDelegate.swift */,
+				AD78778429C884D5001FF0A6 /* SceneDelegate.swift */,
+				AD78779029C884D6001FF0A6 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AD78779729C8850F001FF0A6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD78778629C884D5001FF0A6 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AD78779829C8851E001FF0A6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AD78778829C884D5001FF0A6 /* Main.storyboard */,
+				AD78778D29C884D6001FF0A6 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AD78779B29C88593001FF0A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD78779929C8858A001FF0A6 /* Drink.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +175,7 @@
 			files = (
 				AD78778729C884D5001FF0A6 /* ViewController.swift in Sources */,
 				AD78778329C884D5001FF0A6 /* AppDelegate.swift in Sources */,
+				AD78779A29C8858A001FF0A6 /* Drink.swift in Sources */,
 				AD78778529C884D5001FF0A6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,7 +325,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 67U424DH3Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CocktailsAPI/Info.plist;
+				INFOPLIST_FILE = CocktailsAPI/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +353,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 67U424DH3Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CocktailsAPI/Info.plist;
+				INFOPLIST_FILE = CocktailsAPI/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
