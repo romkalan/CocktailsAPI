@@ -7,18 +7,18 @@
 
 import UIKit
 
-let link = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
+let drinksLink = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
 
 final class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchInfo()
+        fetchDrinksInfo()
     }
     
 // MARK: - Private Methods
-    private func fetchInfo() {
-        guard let url = URL(string: link) else { return }
+    private func fetchDrinksInfo() {
+        guard let url = URL(string: drinksLink) else { return }
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data else {
