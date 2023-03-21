@@ -7,9 +7,9 @@
 
 import UIKit
 
-let drinksLink = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
-
 final class ViewController: UIViewController {
+
+    private let drinksLink = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ final class ViewController: UIViewController {
             }
             
             let decoder = JSONDecoder()
-            
+
             do {
                 let drinks = try decoder.decode(Drinks.self, from: data)
                 print(drinks)
