@@ -7,9 +7,11 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+enum Link: String {
+    case drinksLink = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
+}
 
-    private let drinksLink = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
+final class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +20,7 @@ final class ViewController: UIViewController {
     
 // MARK: - Private Methods
     private func fetchDrinksInfo() {
-        guard let url = URL(string: drinksLink) else { return }
+        guard let url = URL(string: Link.drinksLink.rawValue) else { return }
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data else {
