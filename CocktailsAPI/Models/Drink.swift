@@ -12,7 +12,7 @@ struct Drink: Decodable {
     let strDrink: String
     let strCategory: String
     let strIBA: String?
-    let strAlcoholic: Alcoholic
+    let strAlcoholic: String
     let strGlass: String
     let strInstructions: String
     let strDrinkThumb: URL
@@ -34,11 +34,6 @@ struct Drink: Decodable {
     let strMeasure7: String?
     
     let strImageAttribution: String?
-}
-
-enum Alcoholic: String, Decodable {
-    case alcoholic = "Alcoholic"
-    case nonAlcoholic = "non Alcoholic"
 }
 
 struct Drinks: Decodable {

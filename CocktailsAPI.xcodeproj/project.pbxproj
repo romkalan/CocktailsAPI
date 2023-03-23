@@ -9,23 +9,29 @@
 /* Begin PBXBuildFile section */
 		AD78778329C884D5001FF0A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD78778229C884D5001FF0A6 /* AppDelegate.swift */; };
 		AD78778529C884D5001FF0A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD78778429C884D5001FF0A6 /* SceneDelegate.swift */; };
-		AD78778729C884D5001FF0A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD78778629C884D5001FF0A6 /* ViewController.swift */; };
+		AD78778729C884D5001FF0A6 /* DetailDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD78778629C884D5001FF0A6 /* DetailDrinkViewController.swift */; };
 		AD78778A29C884D5001FF0A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD78778829C884D5001FF0A6 /* Main.storyboard */; };
 		AD78778C29C884D6001FF0A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD78778B29C884D6001FF0A6 /* Assets.xcassets */; };
 		AD78778F29C884D6001FF0A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD78778D29C884D6001FF0A6 /* LaunchScreen.storyboard */; };
 		AD78779A29C8858A001FF0A6 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD78779929C8858A001FF0A6 /* Drink.swift */; };
+		ADDFAA8929CC2C7400BE6904 /* DrinksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDFAA8829CC2C7400BE6904 /* DrinksListViewController.swift */; };
+		ADDFAA8B29CC2D4E00BE6904 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDFAA8A29CC2D4E00BE6904 /* NetworkManager.swift */; };
+		ADDFAA8F29CC4D3400BE6904 /* DrinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDFAA8E29CC4D3400BE6904 /* DrinkCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AD78777F29C884D5001FF0A6 /* CocktailsAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocktailsAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD78778229C884D5001FF0A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD78778429C884D5001FF0A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AD78778629C884D5001FF0A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AD78778629C884D5001FF0A6 /* DetailDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDrinkViewController.swift; sourceTree = "<group>"; };
 		AD78778929C884D5001FF0A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD78778B29C884D6001FF0A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD78778E29C884D6001FF0A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD78779029C884D6001FF0A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD78779929C8858A001FF0A6 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		ADDFAA8829CC2C7400BE6904 /* DrinksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksListViewController.swift; sourceTree = "<group>"; };
+		ADDFAA8A29CC2D4E00BE6904 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		ADDFAA8E29CC4D3400BE6904 /* DrinkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +65,12 @@
 			isa = PBXGroup;
 			children = (
 				AD78779B29C88593001FF0A6 /* Models */,
+				ADDFAA8C29CC2D5A00BE6904 /* Services */,
 				AD78779629C884E0001FF0A6 /* App */,
+				ADDFAA9029CC4D3A00BE6904 /* Views */,
 				AD78779729C8850F001FF0A6 /* ViewControllers */,
 				AD78779829C8851E001FF0A6 /* Storyboards */,
-				AD78778B29C884D6001FF0A6 /* Assets.xcassets */,
+				ADDFAA8D29CC2D6500BE6904 /* Resources */,
 			);
 			path = CocktailsAPI;
 			sourceTree = "<group>";
@@ -80,7 +88,8 @@
 		AD78779729C8850F001FF0A6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				AD78778629C884D5001FF0A6 /* ViewController.swift */,
+				ADDFAA8829CC2C7400BE6904 /* DrinksListViewController.swift */,
+				AD78778629C884D5001FF0A6 /* DetailDrinkViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -100,6 +109,30 @@
 				AD78779929C8858A001FF0A6 /* Drink.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		ADDFAA8C29CC2D5A00BE6904 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ADDFAA8A29CC2D4E00BE6904 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ADDFAA8D29CC2D6500BE6904 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AD78778B29C884D6001FF0A6 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ADDFAA9029CC4D3A00BE6904 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ADDFAA8E29CC4D3400BE6904 /* DrinkCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,7 +206,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD78778729C884D5001FF0A6 /* ViewController.swift in Sources */,
+				ADDFAA8B29CC2D4E00BE6904 /* NetworkManager.swift in Sources */,
+				ADDFAA8929CC2C7400BE6904 /* DrinksListViewController.swift in Sources */,
+				AD78778729C884D5001FF0A6 /* DetailDrinkViewController.swift in Sources */,
+				ADDFAA8F29CC4D3400BE6904 /* DrinkCell.swift in Sources */,
 				AD78778329C884D5001FF0A6 /* AppDelegate.swift in Sources */,
 				AD78779A29C8858A001FF0A6 /* Drink.swift in Sources */,
 				AD78778529C884D5001FF0A6 /* SceneDelegate.swift in Sources */,
