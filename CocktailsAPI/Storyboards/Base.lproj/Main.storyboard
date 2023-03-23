@@ -104,7 +104,7 @@
             <objects>
                 <navigationController id="deV-Gn-Ta0" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Ifo-FS-1fi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -230,6 +230,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="done"/>
                                                     <connections>
                                                         <action selector="textChanged:" destination="sq6-0h-FZX" eventType="editingChanged" id="zwx-Ih-DTl"/>
+                                                        <outlet property="delegate" destination="sq6-0h-FZX" id="x6x-2o-19Y"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -258,6 +259,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="done"/>
                                                     <connections>
                                                         <action selector="textChanged:" destination="sq6-0h-FZX" eventType="editingDidEnd" id="rau-Nd-fYK"/>
+                                                        <outlet property="delegate" destination="sq6-0h-FZX" id="EBM-m8-DDP"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -309,6 +311,9 @@
                                                     <rect key="frame" x="16" y="0.0" width="288" height="22.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="sq6-0h-FZX" id="Sqy-6D-46i"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -336,6 +341,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="done"/>
                                                     <connections>
                                                         <action selector="textChanged:" destination="sq6-0h-FZX" eventType="editingDidEnd" id="c6D-8i-Y4K"/>
+                                                        <outlet property="delegate" destination="sq6-0h-FZX" id="xgs-fb-7Tj"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -620,7 +626,6 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="VPH-K5-AdU">
                             <connections>
-                                <action selector="saveButtonPressed:" destination="sq6-0h-FZX" id="c7z-w8-yVr"/>
                                 <segue destination="afD-db-dQv" kind="unwind" unwindAction="unwindFor:" id="jY3-9q-EDb"/>
                             </connections>
                         </barButtonItem>

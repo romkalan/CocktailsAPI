@@ -28,7 +28,7 @@ class DrinksListViewController: UITableViewController {
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         guard let addNewDrinkVC = segue.source as? AddNewDrinkViewController else { return }
-        drinks.drinks.append(
+        drinks.drinks.insert(
             Drink(
                 strDrink: addNewDrinkVC.drinkNameTextField.text ?? "",
                 strCategory: addNewDrinkVC.categoryTextField.text ?? "",
@@ -46,7 +46,8 @@ class DrinksListViewController: UITableViewController {
                 strMeasure3: addNewDrinkVC.measuresTextField[2].text ?? "",
                 strMeasure4: addNewDrinkVC.measuresTextField[3].text ?? "",
                 strMeasure5: addNewDrinkVC.measuresTextField[4].text ?? ""
-            )
+            ),
+            at: 0
         )
         tableView.reloadData()
     }
