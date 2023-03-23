@@ -25,7 +25,7 @@ final class DrinkCell: UITableViewCell {
             switch result {
             case .success(let imageData):
                 self?.drinkImage.image = UIImage(data: imageData)
-                self?.drinkImage.layer.cornerRadius = (self?.drinkImage.frame.width ?? 150) / 2
+                self?.drinkImage.layer.cornerRadius = (self?.drinkImage.frame.height ?? 150) / 2
             case .failure(let error):
                 print(error)
             }

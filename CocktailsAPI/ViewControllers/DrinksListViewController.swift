@@ -14,7 +14,8 @@ class DrinksListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 120
+        tableView.rowHeight = 130
+        navigationItem.leftBarButtonItem = editButtonItem
         fetchDrinks()
     }
     
@@ -48,6 +49,43 @@ extension DrinksListViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        .delete
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            drinks.drinks.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let drink = drinks.drinks.remove(at: sourceIndexPath.row)
+        drinks.drinks.insert(drink, at: destinationIndexPath.row)
+    }
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let favourite = favouriteAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [favourite])
+    }
+}
+
+//MARK: - Private Methods
+extension DrinksListViewController {
+    
+    func favouriteAction(at indexPath: IndexPath) -> UIContextualAction {
+        var drink = drinks.drinks[indexPath.row]
+        let action = UIContextualAction(style: .normal, title: "Favourite") { [unowned self] (action, view, completion) in
+            drink.isFavourite = !(drink.isFavourite ?? false)
+            drinks.drinks[indexPath.row] = drink
+            completion(true)
+        }
+        action.backgroundColor = drink.isFavourite ?? false ? .systemMint : .systemGray
+        action.image = UIImage(systemName: "heart")
+        return action
     }
 }
 
