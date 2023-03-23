@@ -25,6 +25,31 @@ class DrinksListViewController: UITableViewController {
         
         detailDrinkVC.drink = drinks.drinks[indexPath.row]
     }
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        guard let addNewDrinkVC = segue.source as? AddNewDrinkViewController else { return }
+        drinks.drinks.append(
+            Drink(
+                strDrink: addNewDrinkVC.drinkNameTextField.text ?? "",
+                strCategory: addNewDrinkVC.categoryTextField.text ?? "",
+                strAlcoholic: addNewDrinkVC.isAlcoholicTextField.text ?? "",
+                strGlass: addNewDrinkVC.glassTextField.text ?? "",
+                strInstructions: addNewDrinkVC.recipeTextField.text ?? "",
+                strDrinkThumb: URL(string: addNewDrinkVC.imageTextField.text ?? "") ?? Link.plug.url,
+                strIngredient1: addNewDrinkVC.ingredientsTextField[0].text ?? "",
+                strIngredient2: addNewDrinkVC.ingredientsTextField[1].text ?? "",
+                strIngredient3: addNewDrinkVC.ingredientsTextField[2].text ?? "",
+                strIngredient4: addNewDrinkVC.ingredientsTextField[3].text ?? "",
+                strIngredient5: addNewDrinkVC.ingredientsTextField[4].text ?? "",
+                strMeasure1: addNewDrinkVC.measuresTextField[0].text ?? "",
+                strMeasure2: addNewDrinkVC.measuresTextField[1].text ?? "",
+                strMeasure3: addNewDrinkVC.measuresTextField[2].text ?? "",
+                strMeasure4: addNewDrinkVC.measuresTextField[3].text ?? "",
+                strMeasure5: addNewDrinkVC.measuresTextField[4].text ?? ""
+            )
+        )
+        tableView.reloadData()
+    }
 }
 
 // MARK: - Table view data source

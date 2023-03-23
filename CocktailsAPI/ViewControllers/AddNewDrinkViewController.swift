@@ -36,11 +36,16 @@ class AddNewDrinkViewController: UITableViewController {
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
     }
     
+    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
+    
+    
     private func updateSaveButtonState() {
         let drinkName = drinkNameTextField.text ?? ""
         let drinkCategory = categoryTextField.text ?? ""
         let drinkImage = imageTextField.text ?? ""
-        
+
         saveButton.isEnabled = !drinkName.isEmpty && !drinkCategory.isEmpty && !drinkImage.isEmpty
     }
     
