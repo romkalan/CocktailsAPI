@@ -14,8 +14,15 @@ class DrinksListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 100
+        tableView.rowHeight = 120
         fetchDrinks()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailDrinkVC = segue.destination as? DetailDrinkViewController else { return }
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        
+        detailDrinkVC.drink = drinks.drinks[indexPath.row]
     }
 
 // MARK: - Table view data source
@@ -30,6 +37,11 @@ class DrinksListViewController: UITableViewController {
         cell.configure(with: drink)
 
         return cell
+    }
+    
+// MARK: - Table view delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -51,24 +63,3 @@ extension DrinksListViewController {
         }
     }
 }
-
-//extension DrinksListViewController {
-//    private func fetchDrink() {
-//        URLSession.shared.dataTask(with: Link.drinksLink.url) { [weak self] data, _, error in
-//            guard let data else {
-//                print(error?.localizedDescription ?? "No error description")
-//                return
-//            }
-//
-//            do {
-//                let decoder = JSONDecoder()
-//                self?.drinks = try decoder.decode(Drinks.self, from: data)
-//                DispatchQueue.main.async {
-//                    self?.tableView.reloadData()
-//                }
-//            } catch let error {
-//                print(error.localizedDescription)
-//            }
-//        }.resume()
-//    }
-//}

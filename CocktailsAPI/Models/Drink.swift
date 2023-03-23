@@ -9,9 +9,9 @@ import Foundation
 
 
 struct Drink: Decodable {
-    let strDrink: String?
-    let strCategory: String?
-    let strAlcoholic: String?
+    let strDrink: String
+    let strCategory: String
+    let strAlcoholic: String
     let strGlass: String
     let strInstructions: String
     let strDrinkThumb: URL
@@ -21,18 +21,23 @@ struct Drink: Decodable {
     let strIngredient3: String?
     let strIngredient4: String?
     let strIngredient5: String?
-    let strIngredient6: String?
-    let strIngredient7: String?
     
     let strMeasure1: String?
     let strMeasure2: String?
     let strMeasure3: String?
     let strMeasure4: String?
     let strMeasure5: String?
-    let strMeasure6: String?
-    let strMeasure7: String?
-    
-    let strImageAttribution: String?
+        
+    var ingredients: String {
+        """
+        For its preparation you will need:
+        \(strIngredient1 ?? "") \(strMeasure1 ?? "")
+        \(strIngredient2 ?? "") \(strMeasure2 ?? "")
+        \(strIngredient3 ?? "") \(strMeasure3 ?? "")
+        \(strIngredient4 ?? "") \(strMeasure4 ?? "")
+        \(strIngredient5 ?? "") \(strMeasure5 ?? "")
+        """
+    }
 }
 
 struct Drinks: Decodable {

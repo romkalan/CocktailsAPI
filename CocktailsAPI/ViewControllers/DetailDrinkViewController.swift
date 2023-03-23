@@ -7,32 +7,46 @@
 
 import UIKit
 
-
 final class DetailDrinkViewController: UIViewController {
 
+    @IBOutlet var drinkImage: UIImageView!
+    @IBOutlet var drinkNameLabel: UILabel!
+    @IBOutlet var drinkCategoryLabel: UILabel!
+    @IBOutlet var drinkGlassLabel: UILabel!
+    @IBOutlet var isAlcoholicLabel: UILabel!
+    @IBOutlet var drinkIngredientsLabel: UILabel!
+    @IBOutlet var drinkRecipeLabel: UILabel!
+    
+    var drink: Drink!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchDrinksInfo()
+        loadImage()
+        setupLabels()
     }
     
-// MARK: - Private Methods
-    private func fetchDrinksInfo() {
-        URLSession.shared.dataTask(with: Link.drinksLink.url) { data, _, error in
-            guard let data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
+//MARK: - Private methods
+    
+   private func loadImage() {
+        DispatchQueue.global().async { [weak self] in
+            guard let imageData = try? Data(contentsOf: self?.drink.strDrinkThumb ?? Link.plug.url) else { return }
+            DispatchQueue.main.async { [weak self] in
+                self?.drinkImage.image = UIImage(data: imageData)
+                self?.drinkImage.layer.cornerRadius = (self?.drinkImage.frame.width ?? 180) / 2
             }
-            
-            let decoder = JSONDecoder()
-
-            do {
-                let drinks = try decoder.decode(Drinks.self, from: data)
-                print(drinks)
-            } catch let error {
-                print(error.localizedDescription)
-            }
-            
-        }.resume()
+        }
+    }
+    
+    private func setupLabels() {
+        drinkNameLabel.text = drink.strDrink
+        drinkCategoryLabel.text = "Category: \(drink.strCategory)"
+        drinkGlassLabel.text = "Glass: \(drink.strGlass)"
+        isAlcoholicLabel.text = drink.strAlcoholic
+        drinkIngredientsLabel.text = drink.ingredients
+        drinkRecipeLabel.text = """
+                                Recipe:
+                                \(drink.strInstructions)
+                                """
     }
 }
 
