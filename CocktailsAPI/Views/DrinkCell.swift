@@ -17,9 +17,9 @@ class DrinkCell: UITableViewCell {
     private let networkManager = NetworkManager.shared
     
     func configure(with drink: Drink) {
-        drinkNameLabel.text = drink.strDrink
-        drinkCategoryLabel.text = drink.strCategory
-        isAlcoholicLabel.text = drink.strAlcoholic
+        drinkNameLabel.text = drink.strDrink ?? "no Name"
+        drinkCategoryLabel.text = drink.strCategory ?? "No Category"
+        isAlcoholicLabel.text = drink.strAlcoholic ?? "No information"
         
 //        networkManager.fetchImage(from: course.imageUrl!) { [weak self] result in
 //            switch result {

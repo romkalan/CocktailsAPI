@@ -36,11 +36,14 @@ class DrinksListViewController: UITableViewController {
 // MARK: - Networking
 extension DrinksListViewController {
 
-    private func fetchDrinks() {
+    func fetchDrinks() {
         networkManager.fetch(Drinks.self, from: Link.drinksLink.url) { [weak self] result in
             switch result {
             case .success(let drinks):
-                self?.tableView.reloadData()
+                self?.drinks = drinks
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
                 print(drinks)
             case .failure(let error):
                 print(error)
@@ -50,7 +53,7 @@ extension DrinksListViewController {
 }
 
 //extension DrinksListViewController {
-//    func fetchDrink() {
+//    private func fetchDrink() {
 //        URLSession.shared.dataTask(with: Link.drinksLink.url) { [weak self] data, _, error in
 //            guard let data else {
 //                print(error?.localizedDescription ?? "No error description")
