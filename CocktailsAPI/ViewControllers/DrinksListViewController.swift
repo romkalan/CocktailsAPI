@@ -100,7 +100,7 @@ extension DrinksListViewController {
     }
 }
 
-//MARK: - Methods
+//MARK: - Private Methods
 private extension DrinksListViewController {
     
     func favoriteAction(at indexPath: IndexPath) -> UIContextualAction {
