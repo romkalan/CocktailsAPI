@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddNewDrinkViewController: UITableViewController {
+final class AddNewDrinkViewController: UITableViewController {
     
     @IBOutlet var saveButton: UIBarButtonItem!
     
@@ -17,9 +17,18 @@ class AddNewDrinkViewController: UITableViewController {
     @IBOutlet var isAlcoholicTextField: UITextField!
     @IBOutlet var imageTextField: UITextField!
     @IBOutlet var recipeTextField: UITextField!
+        
+    @IBOutlet var ingredientTextField1: UITextField!
+    @IBOutlet var ingredientTextField2: UITextField!
+    @IBOutlet var ingredientTextField3: UITextField!
+    @IBOutlet var ingredientTextField4: UITextField!
+    @IBOutlet var ingredientTextField5: UITextField!
     
-    @IBOutlet var ingredientsTextField: [UITextField]!
-    @IBOutlet var measuresTextField: [UITextField]!
+    @IBOutlet var measureTextField1: UITextField!
+    @IBOutlet var measureTextField2: UITextField!
+    @IBOutlet var measureTextField3: UITextField!
+    @IBOutlet var measureTextField4: UITextField!
+    @IBOutlet var measureTextField5: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()

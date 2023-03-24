@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="deV-Gn-Ta0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lZN-6Q-8PJ">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -97,23 +97,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCO-T2-D1q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-639.375" y="-105.63380281690141"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="bY5-85-plz">
-            <objects>
-                <navigationController id="deV-Gn-Ta0" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Ifo-FS-1fi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="J4n-CM-PwU" kind="relationship" relationship="rootViewController" id="Kaz-gv-J5d"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oH7-m7-2d5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1412" y="-105"/>
+            <point key="canvasLocation" x="1290" y="-185.91549295774649"/>
         </scene>
         <!--Detail Drink View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -124,7 +108,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7NE-bI-r1G">
-                                <rect key="frame" x="16" y="92.5" width="288" height="180"/>
+                                <rect key="frame" x="16" y="44" width="288" height="180"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nU7-pd-F7p">
                                         <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
@@ -165,13 +149,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygz-WD-iZC">
-                                <rect key="frame" x="16" y="292.5" width="288" height="21.5"/>
+                                <rect key="frame" x="16" y="244" width="288" height="21.5"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aov-no-KYT">
-                                <rect key="frame" x="16" y="334" width="288" height="21.5"/>
+                                <rect key="frame" x="16" y="285.5" width="288" height="21.5"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
                                 <color key="textColor" systemColor="tintColor"/>
                                 <nil key="highlightedColor"/>
@@ -204,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="182" y="161"/>
+            <point key="canvasLocation" x="2176.875" y="160.56338028169014"/>
         </scene>
         <!--Additing New Drink-->
         <scene sceneID="sE1-3d-RkA">
@@ -635,25 +619,25 @@
                         <outlet property="drinkNameTextField" destination="BUa-UA-VQo" id="HtT-u0-h3Y"/>
                         <outlet property="glassTextField" destination="9iT-H7-gid" id="RA7-Ug-IOV"/>
                         <outlet property="imageTextField" destination="cYW-C1-BBp" id="7M7-T1-GqP"/>
+                        <outlet property="ingredientTextField1" destination="Sth-0C-Yy5" id="nak-ZS-Zau"/>
+                        <outlet property="ingredientTextField2" destination="930-C5-hqF" id="w4d-xo-5Pa"/>
+                        <outlet property="ingredientTextField3" destination="FR1-dA-DV4" id="enJ-hP-Iaq"/>
+                        <outlet property="ingredientTextField4" destination="i60-a9-XhY" id="X4n-Fz-Mxy"/>
+                        <outlet property="ingredientTextField5" destination="5QA-Td-2Ej" id="Y66-rY-2Wx"/>
                         <outlet property="isAlcoholicTextField" destination="yfj-yh-COR" id="VBm-sm-oGU"/>
+                        <outlet property="measureTextField1" destination="KXD-an-yiC" id="sim-5a-9qA"/>
+                        <outlet property="measureTextField2" destination="j30-cO-NWx" id="QQ8-rC-Umc"/>
+                        <outlet property="measureTextField3" destination="Fo1-uP-Ct3" id="W7Y-Nd-1Wb"/>
+                        <outlet property="measureTextField4" destination="EVU-fd-XCX" id="tQP-d6-z0R"/>
+                        <outlet property="measureTextField5" destination="rzT-OR-3rE" id="KdQ-aR-CPV"/>
                         <outlet property="recipeTextField" destination="gEE-HE-57k" id="sc2-XA-ktj"/>
                         <outlet property="saveButton" destination="VPH-K5-AdU" id="JsM-XG-mnM"/>
-                        <outletCollection property="ingredientsTextField" destination="Sth-0C-Yy5" collectionClass="NSMutableArray" id="mEv-qI-O2E"/>
-                        <outletCollection property="measuresTextField" destination="KXD-an-yiC" collectionClass="NSMutableArray" id="lv3-sr-m5Z"/>
-                        <outletCollection property="ingredientsTextField" destination="930-C5-hqF" collectionClass="NSMutableArray" id="dns-0r-m6v"/>
-                        <outletCollection property="ingredientsTextField" destination="FR1-dA-DV4" collectionClass="NSMutableArray" id="NW4-IH-m2Q"/>
-                        <outletCollection property="ingredientsTextField" destination="i60-a9-XhY" collectionClass="NSMutableArray" id="6gm-Zk-16M"/>
-                        <outletCollection property="ingredientsTextField" destination="5QA-Td-2Ej" collectionClass="NSMutableArray" id="GG3-Oe-zB3"/>
-                        <outletCollection property="measuresTextField" destination="j30-cO-NWx" collectionClass="NSMutableArray" id="UDW-eO-hwx"/>
-                        <outletCollection property="measuresTextField" destination="Fo1-uP-Ct3" collectionClass="NSMutableArray" id="Gul-Hj-PJd"/>
-                        <outletCollection property="measuresTextField" destination="EVU-fd-XCX" collectionClass="NSMutableArray" id="S4j-wO-sB5"/>
-                        <outletCollection property="measuresTextField" destination="rzT-OR-3rE" collectionClass="NSMutableArray" id="Ekk-53-mkb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXe-SE-Jut" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="afD-db-dQv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="941.25" y="-541.90140845070425"/>
+            <point key="canvasLocation" x="2936.25" y="-541.90140845070425"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JJL-qY-iFy">
@@ -669,7 +653,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhG-rz-rmR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="182" y="-542"/>
+            <point key="canvasLocation" x="2176.875" y="-542.95774647887322"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="gfd-9M-qcf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lZN-6Q-8PJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="NEq-3Q-hWm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ofe-ga-NxF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="J4n-CM-PwU" kind="relationship" relationship="rootViewController" id="CyQ-xd-mSR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZQz-IQ-mjC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="463" y="-186"/>
         </scene>
     </scenes>
     <resources>

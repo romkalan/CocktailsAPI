@@ -7,10 +7,11 @@
 
 import UIKit
 
-class DrinksListViewController: UITableViewController {
+final class DrinksListViewController: UITableViewController {
     
     private let networkManager = NetworkManager.shared
     private var drinks = Drinks(drinks: [])
+    var favouriteDrinks: [Drink] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,16 +37,16 @@ class DrinksListViewController: UITableViewController {
                 strGlass: addNewDrinkVC.glassTextField.text ?? "",
                 strInstructions: addNewDrinkVC.recipeTextField.text ?? "",
                 strDrinkThumb: URL(string: addNewDrinkVC.imageTextField.text ?? "") ?? Link.plug.url,
-                strIngredient1: addNewDrinkVC.ingredientsTextField[0].text ?? "",
-                strIngredient2: addNewDrinkVC.ingredientsTextField[1].text ?? "",
-                strIngredient3: addNewDrinkVC.ingredientsTextField[2].text ?? "",
-                strIngredient4: addNewDrinkVC.ingredientsTextField[3].text ?? "",
-                strIngredient5: addNewDrinkVC.ingredientsTextField[4].text ?? "",
-                strMeasure1: addNewDrinkVC.measuresTextField[0].text ?? "",
-                strMeasure2: addNewDrinkVC.measuresTextField[1].text ?? "",
-                strMeasure3: addNewDrinkVC.measuresTextField[2].text ?? "",
-                strMeasure4: addNewDrinkVC.measuresTextField[3].text ?? "",
-                strMeasure5: addNewDrinkVC.measuresTextField[4].text ?? ""
+                strIngredient1: addNewDrinkVC.ingredientTextField1.text ?? "",
+                strIngredient2: addNewDrinkVC.ingredientTextField2.text ?? "",
+                strIngredient3: addNewDrinkVC.ingredientTextField3.text ?? "",
+                strIngredient4: addNewDrinkVC.ingredientTextField4.text ?? "",
+                strIngredient5: addNewDrinkVC.ingredientTextField5.text ?? "",
+                strMeasure1: addNewDrinkVC.measureTextField1.text ?? "",
+                strMeasure2: addNewDrinkVC.measureTextField2.text ?? "",
+                strMeasure3: addNewDrinkVC.measureTextField3.text ?? "",
+                strMeasure4: addNewDrinkVC.measureTextField4.text ?? "",
+                strMeasure5: addNewDrinkVC.measureTextField5.text ?? ""
             ),
             at: 0
         )
@@ -102,7 +103,7 @@ extension DrinksListViewController {
 //MARK: - Private Methods
 extension DrinksListViewController {
     
-    func favouriteAction(at indexPath: IndexPath) -> UIContextualAction {
+    private func favouriteAction(at indexPath: IndexPath) -> UIContextualAction {
         var drink = drinks.drinks[indexPath.row]
         let action = UIContextualAction(style: .normal, title: "Favourite") { [unowned self] (action, view, completion) in
             drink.isFavourite = !(drink.isFavourite ?? false)
@@ -111,6 +112,7 @@ extension DrinksListViewController {
         }
         action.backgroundColor = drink.isFavourite ?? false ? .systemMint : .systemGray
         action.image = UIImage(systemName: "heart")
+        favouriteDrinks.append(drink)
         return action
     }
 }
@@ -118,7 +120,7 @@ extension DrinksListViewController {
 // MARK: - Networking
 extension DrinksListViewController {
 
-    func fetchDrinks() {
+    private func fetchDrinks() {
         networkManager.fetch(Drinks.self, from: Link.drinksLink.url) { [weak self] result in
             switch result {
             case .success(let drinks):
