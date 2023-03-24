@@ -57,6 +57,7 @@ final class AddNewDrinkViewController: UITableViewController {
                              !isAlcoholic.isEmpty
     }
     
+//MARK: - Alert Controller
     private func showAlert(title: String, message: String, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
@@ -66,6 +67,7 @@ final class AddNewDrinkViewController: UITableViewController {
         present(alert, animated: true)
     }
     
+//MARK: - endEditingKeyboard
     private func endEditingKeyboard() {
         let dismissKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         dismissKeyboardGesture.cancelsTouchesInView = false

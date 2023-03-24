@@ -44,7 +44,3 @@ struct Drink: Decodable {
 struct Drinks: Decodable {
     var drinks: [Drink]
 }
-
-struct FavouriteDrinks {
-    var drinks: [Drink]
-}
