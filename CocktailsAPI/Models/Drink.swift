@@ -27,6 +27,8 @@ struct Drink: Decodable {
     let strMeasure4: String?
     let strMeasure5: String?
         
+    var isFavourite: Bool?
+
     var ingredients: String {
         """
         For its preparation you will need:
@@ -37,10 +39,12 @@ struct Drink: Decodable {
         \(strIngredient5 ?? "") \(strMeasure5 ?? "")
         """
     }
-    
-    var isFavourite: Bool?
 }
 
 struct Drinks: Decodable {
+    var drinks: [Drink]
+}
+
+struct FavouriteDrinks {
     var drinks: [Drink]
 }
