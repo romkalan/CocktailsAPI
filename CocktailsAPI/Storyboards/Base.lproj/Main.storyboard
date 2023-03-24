@@ -97,7 +97,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCO-T2-D1q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1290" y="-185.91549295774649"/>
+            <point key="canvasLocation" x="2284" y="-30"/>
         </scene>
         <!--Detail Drink View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -188,13 +188,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2176.875" y="160.56338028169014"/>
+            <point key="canvasLocation" x="3174.375" y="160.56338028169014"/>
         </scene>
         <!--Additing New Drink-->
         <scene sceneID="sE1-3d-RkA">
             <objects>
                 <tableViewController id="sq6-0h-FZX" customClass="AddNewDrinkViewController" customModule="CocktailsAPI" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="btK-c3-Oy7">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="btK-c3-Oy7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -458,47 +458,47 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Ingredients 3" id="Ecw-uT-seq">
+                            <tableViewSection headerTitle="Ingredients 3" id="9hf-qd-1JL">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xxg-ul-82h">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="WLe-zQ-1PR">
                                         <rect key="frame" x="0.0" y="728.5" width="320" height="22.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xxg-ul-82h" id="VqV-CN-uM8">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WLe-zQ-1PR" id="GGr-n4-ikq">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="22.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Superfine Sugar" placeholder="Superfine Sugar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FR1-dA-DV4">
-                                                    <rect key="frame" x="16" y="0.0" width="288" height="22.5"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Sugar" placeholder="ingredient" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QMF-cG-ObH">
+                                                    <rect key="frame" x="16" y="0.0" width="296" height="22.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="FR1-dA-DV4" firstAttribute="leading" secondItem="VqV-CN-uM8" secondAttribute="leading" constant="16" id="7HI-ee-aHY"/>
-                                                <constraint firstItem="FR1-dA-DV4" firstAttribute="top" secondItem="VqV-CN-uM8" secondAttribute="top" id="fsy-us-Gfd"/>
-                                                <constraint firstAttribute="trailing" secondItem="FR1-dA-DV4" secondAttribute="trailing" constant="16" id="pRT-7u-qHY"/>
-                                                <constraint firstAttribute="bottom" secondItem="FR1-dA-DV4" secondAttribute="bottom" id="z3k-M7-Iph"/>
+                                                <constraint firstItem="QMF-cG-ObH" firstAttribute="leading" secondItem="GGr-n4-ikq" secondAttribute="leading" constant="16" id="235-bD-PmE"/>
+                                                <constraint firstItem="QMF-cG-ObH" firstAttribute="top" secondItem="GGr-n4-ikq" secondAttribute="top" id="EfP-ej-2H6"/>
+                                                <constraint firstAttribute="trailing" secondItem="QMF-cG-ObH" secondAttribute="trailing" constant="8" id="aVz-WI-jgN"/>
+                                                <constraint firstAttribute="bottom" secondItem="QMF-cG-ObH" secondAttribute="bottom" id="anq-61-1UA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="5Qq-qG-WDg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="g8a-lL-3aF">
                                         <rect key="frame" x="0.0" y="751" width="320" height="22.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Qq-qG-WDg" id="Mbu-Uw-l4e">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g8a-lL-3aF" id="zjC-7Z-ALL">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="22.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2 Bar Spoons" placeholder="2 Bar Spoons" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fo1-uP-Ct3">
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2 spoon" placeholder="measure" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BOh-7z-1DB">
                                                     <rect key="frame" x="16" y="0.0" width="288" height="22.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="Fo1-uP-Ct3" secondAttribute="bottom" id="FiG-WN-Nl7"/>
-                                                <constraint firstItem="Fo1-uP-Ct3" firstAttribute="leading" secondItem="Mbu-Uw-l4e" secondAttribute="leading" constant="16" id="MHX-E3-Vbe"/>
-                                                <constraint firstItem="Fo1-uP-Ct3" firstAttribute="top" secondItem="Mbu-Uw-l4e" secondAttribute="top" id="awO-kL-YNf"/>
-                                                <constraint firstAttribute="trailing" secondItem="Fo1-uP-Ct3" secondAttribute="trailing" constant="16" id="m38-ib-CVa"/>
+                                                <constraint firstItem="BOh-7z-1DB" firstAttribute="leading" secondItem="zjC-7Z-ALL" secondAttribute="leading" constant="16" id="Qlk-Ov-8zp"/>
+                                                <constraint firstAttribute="bottom" secondItem="BOh-7z-1DB" secondAttribute="bottom" id="Ua8-Vo-HYe"/>
+                                                <constraint firstItem="BOh-7z-1DB" firstAttribute="top" secondItem="zjC-7Z-ALL" secondAttribute="top" id="hp3-G6-Ac8"/>
+                                                <constraint firstAttribute="trailing" secondItem="BOh-7z-1DB" secondAttribute="trailing" constant="16" id="zDQ-Hy-nKN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -621,13 +621,13 @@
                         <outlet property="imageTextField" destination="cYW-C1-BBp" id="7M7-T1-GqP"/>
                         <outlet property="ingredientTextField1" destination="Sth-0C-Yy5" id="nak-ZS-Zau"/>
                         <outlet property="ingredientTextField2" destination="930-C5-hqF" id="w4d-xo-5Pa"/>
-                        <outlet property="ingredientTextField3" destination="FR1-dA-DV4" id="enJ-hP-Iaq"/>
+                        <outlet property="ingredientTextField3" destination="QMF-cG-ObH" id="GCc-hM-m4n"/>
                         <outlet property="ingredientTextField4" destination="i60-a9-XhY" id="X4n-Fz-Mxy"/>
                         <outlet property="ingredientTextField5" destination="5QA-Td-2Ej" id="Y66-rY-2Wx"/>
                         <outlet property="isAlcoholicTextField" destination="yfj-yh-COR" id="VBm-sm-oGU"/>
                         <outlet property="measureTextField1" destination="KXD-an-yiC" id="sim-5a-9qA"/>
                         <outlet property="measureTextField2" destination="j30-cO-NWx" id="QQ8-rC-Umc"/>
-                        <outlet property="measureTextField3" destination="Fo1-uP-Ct3" id="W7Y-Nd-1Wb"/>
+                        <outlet property="measureTextField3" destination="BOh-7z-1DB" id="lE0-kc-R74"/>
                         <outlet property="measureTextField4" destination="EVU-fd-XCX" id="tQP-d6-z0R"/>
                         <outlet property="measureTextField5" destination="rzT-OR-3rE" id="KdQ-aR-CPV"/>
                         <outlet property="recipeTextField" destination="gEE-HE-57k" id="sc2-XA-ktj"/>
@@ -637,7 +637,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXe-SE-Jut" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="afD-db-dQv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2936.25" y="-541.90140845070425"/>
+            <point key="canvasLocation" x="3933.75" y="-541.90140845070425"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JJL-qY-iFy">
@@ -653,7 +653,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhG-rz-rmR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2176.875" y="-542.95774647887322"/>
+            <point key="canvasLocation" x="3174.375" y="-542.95774647887322"/>
         </scene>
         <!--Item-->
         <scene sceneID="gfd-9M-qcf">
@@ -672,7 +672,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQz-IQ-mjC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="463" y="-186"/>
+            <point key="canvasLocation" x="1457" y="-30"/>
         </scene>
     </scenes>
     <resources>

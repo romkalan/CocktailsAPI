@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Drink: Decodable {
+struct Drink: Decodable, Equatable, Hashable {
     let strDrink: String
     let strCategory: String
     let strAlcoholic: String
@@ -27,7 +27,7 @@ struct Drink: Decodable {
     let strMeasure4: String?
     let strMeasure5: String?
         
-    var isFavourite: Bool?
+    var isFavorite: Bool? = false
 
     var ingredients: String {
         """

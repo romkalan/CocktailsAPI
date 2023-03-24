@@ -11,7 +11,7 @@ final class DrinksListViewController: UITableViewController {
     
     private let networkManager = NetworkManager.shared
     private var drinks = Drinks(drinks: [])
-    var favouriteDrinks: [Drink] = []
+    var favoriteDrinks: [Drink] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,24 +95,24 @@ extension DrinksListViewController {
     }
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let favourite = favouriteAction(at: indexPath)
-        return UISwipeActionsConfiguration(actions: [favourite])
+        let favorite = favoriteAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [favorite])
     }
 }
 
-//MARK: - Private Methods
-extension DrinksListViewController {
+//MARK: - Methods
+private extension DrinksListViewController {
     
-    private func favouriteAction(at indexPath: IndexPath) -> UIContextualAction {
+    func favoriteAction(at indexPath: IndexPath) -> UIContextualAction {
         var drink = drinks.drinks[indexPath.row]
-        let action = UIContextualAction(style: .normal, title: "Favourite") { [unowned self] (action, view, completion) in
-            drink.isFavourite = !(drink.isFavourite ?? false)
+        let action = UIContextualAction(style: .normal, title: "Favorite") { [unowned self] (action, view, completion) in
+            drink.isFavorite?.toggle()
             drinks.drinks[indexPath.row] = drink
             completion(true)
         }
-        action.backgroundColor = drink.isFavourite ?? false ? .systemMint : .systemGray
+        action.backgroundColor = drink.isFavorite ?? false ? .systemMint : .systemGray
         action.image = UIImage(systemName: "heart")
-        favouriteDrinks.append(drink)
+                
         return action
     }
 }
