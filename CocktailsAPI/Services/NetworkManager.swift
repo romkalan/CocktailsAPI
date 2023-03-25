@@ -33,7 +33,7 @@ final class NetworkManager {
     
     private init() {}
     
-        func fetch<T: Decodable>(_ type: T.Type, from url: URL, completion: @escaping(Result<T, NetworkError>) -> Void) {
+    func fetch<T: Decodable>(_ type: T.Type, from url: URL, completion: @escaping(Result<T, NetworkError>) -> Void) {
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data else {
