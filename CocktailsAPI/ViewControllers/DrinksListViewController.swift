@@ -106,7 +106,7 @@ private extension DrinksListViewController {
     func favoriteAction(at indexPath: IndexPath) -> UIContextualAction {
         var drink = drinks.drinks[indexPath.row]
         let action = UIContextualAction(style: .normal, title: "Favorite") { [unowned self] (action, view, completion) in
-            drink.isFavorite?.toggle()
+            drink.isFavorite = !(drink.isFavorite ?? false)
             drinks.drinks[indexPath.row] = drink
             completion(true)
         }
