@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Drink: Decodable, Equatable, Hashable {
+struct Drink: Decodable {
     let strDrink: String
     let strCategory: String
     let strAlcoholic: String
@@ -43,4 +43,12 @@ struct Drink: Decodable, Equatable, Hashable {
 
 struct Drinks: Decodable {
     var drinks: [Drink]
+    
+    init(drinks: [Drink]) {
+        self.drinks = drinks
+    }
+    
+//    init(drinkData: []) {
+//
+//    }
 }

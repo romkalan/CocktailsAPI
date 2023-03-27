@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 final class DrinksListViewController: UITableViewController {
     
@@ -17,7 +18,8 @@ final class DrinksListViewController: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = 130
         navigationItem.leftBarButtonItem = editButtonItem
-        fetchDrinks()
+//        fetchDrinks()
+        fetchDrinksWithAlamofire()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -119,7 +121,8 @@ private extension DrinksListViewController {
 
 // MARK: - Networking
 extension DrinksListViewController {
-
+    
+    // MARK: - fetch with URLSession
     private func fetchDrinks() {
         networkManager.fetch(Drinks.self, from: Link.drinksLink.url) { [weak self] result in
             switch result {
@@ -133,5 +136,23 @@ extension DrinksListViewController {
                 print(error)
             }
         }
+    }
+    
+    //MARK: - fetch with alamofire
+    
+    private func fetchDrinksWithAlamofire() {
+        AF.request(Link.drinksLink.url)
+            .validate()
+            .responseJSON { dataResponse in
+                guard let statusCode = dataResponse.response?.statusCode else { return }
+                print("STATUS CODE: ", statusCode)
+                switch dataResponse.result {
+                case .success(let value):
+                    guard let drinksData = value as? [String: Any] else { return }
+                    print(drinksData)
+                case .failure(let error):
+                    print(error)
+                }
+            }
     }
 }

@@ -21,14 +21,14 @@ final class DrinkCell: UITableViewCell {
         drinkCategoryLabel.text = drink.strCategory
         isAlcoholicLabel.text = drink.strAlcoholic
         
-        networkManager.fetchImage(from: drink.strDrinkThumb) { [weak self] result in
-            switch result {
-            case .success(let imageData):
-                self?.drinkImage.image = UIImage(data: imageData)
-                self?.drinkImage.layer.cornerRadius = (self?.drinkImage.frame.height ?? 150) / 2
-            case .failure(let error):
-                print(error)
-            }
-        }
+//        networkManager.fetchImage(from: drink.strDrinkThumb) { [weak self] result in
+//            switch result {
+//            case .success(let imageData):
+//                self?.drinkImage.image = UIImage(data: imageData)
+//                self?.drinkImage.layer.cornerRadius = (self?.drinkImage.frame.height ?? 150) / 2
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
     }
 }

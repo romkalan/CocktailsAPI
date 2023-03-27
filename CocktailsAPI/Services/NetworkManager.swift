@@ -33,6 +33,7 @@ final class NetworkManager {
     
     private init() {}
     
+//MARK: - fetch with URLSession
     func fetch<T: Decodable>(_ type: T.Type, from url: URL, completion: @escaping(Result<T, NetworkError>) -> Void) {
         
         URLSession.shared.dataTask(with: url) { data, _, error in
@@ -65,6 +66,11 @@ final class NetworkManager {
                 completion(.success(imageData))
             }
         }
+    }
+    
+//MARK: - fetch with alamofire
+    func fetchWithAlamofire() {
+        
     }
 }
 
