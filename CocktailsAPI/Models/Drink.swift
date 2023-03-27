@@ -27,7 +27,7 @@ struct Drink: Decodable {
     let strMeasure4: String?
     let strMeasure5: String?
         
-    var isFavorite: Bool? = false
+    var isFavorite: Bool?
 
     var ingredients: String {
         """

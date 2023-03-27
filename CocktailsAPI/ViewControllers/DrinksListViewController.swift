@@ -148,7 +148,7 @@ extension DrinksListViewController {
                 print("STATUS CODE: ", statusCode)
                 switch dataResponse.result {
                 case .success(let value):
-                    guard let drinksData = value as? [String: Any] else { return }
+                    guard let drinksData = value as? [String: [String: String?]] else { return }
                     print(drinksData)
                 case .failure(let error):
                     print(error)
