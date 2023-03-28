@@ -80,14 +80,10 @@ struct Drink: Decodable {
     }
     
     static func getDrinks(from value: Any) -> [Drink] {
-        guard let drinksData = value as? [String: [[String: Any]]] else { return [] }
+        guard let beveragesData = value as? [String: [[String: Any]]] else { return [] }
+        guard let drinksData = beveragesData["drinks"] else { return [] }
         
-        var drinks: [Drink] = []
-        
-        for drinksDataValue in drinksData.values {
-            drinks = drinksDataValue.map { Drink(drinkData: $0) }
-        }
-        return drinks
+        return drinksData.map { Drink(drinkData: $0) }
     }
 }
 

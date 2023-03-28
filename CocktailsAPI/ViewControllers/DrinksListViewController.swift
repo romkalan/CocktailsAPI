@@ -17,8 +17,7 @@ final class DrinksListViewController: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = 130
         navigationItem.leftBarButtonItem = editButtonItem
-//        fetchDrinks()
-        fetchDrinksWithAlamofire()
+        fetchDrinks()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -121,43 +120,8 @@ private extension DrinksListViewController {
 // MARK: - Networking
 extension DrinksListViewController {
     
-    // MARK: - fetch with URLSession
     private func fetchDrinks() {
-        networkManager.fetch(Drinks.self, from: Link.drinksLink.url) { [weak self] result in
-            switch result {
-            case .success(let drinks):
-                self?.drinks = drinks
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-                print(drinks)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    //MARK: - fetch with Alamofire
-    
-//    private func fetchDrinksWithAlamofire() {
-//        AF.request(Link.drinksLink.url)
-//            .validate()
-//            .responseJSON { [weak self] dataResponse in
-//                guard let statusCode = dataResponse.response?.statusCode else { return }
-//                print("STATUS CODE: ", statusCode)
-//
-//                switch dataResponse.result {
-//                case .success(let value):
-//                    self?.drinks.drinks = Drink.getDrinks(from: value)
-//                    self?.tableView.reloadData()
-//                case .failure(let error):
-//                    print(error)
-//                }
-//            }
-//    }
-    
-    private func fetchDrinksWithAlamofire() {
-        networkManager.fetchWithAlamofire(from: Link.drinksLink.url) { [weak self] result in
+        networkManager.fetch(from: Link.drinksLink.url) { [weak self] result in
             switch result {
             case .success(let drinks):
                 self?.drinks.drinks = drinks

@@ -33,43 +33,7 @@ final class NetworkManager {
     
     private init() {}
     
-//MARK: - fetch with URLSession
-    func fetch<T: Decodable>(_ type: T.Type, from url: URL, completion: @escaping(Result<T, NetworkError>) -> Void) {
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data else {
-                completion(.failure(.noData))
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            
-            do {
-                let dataModel = try decoder.decode(T.self, from: data)
-                DispatchQueue.main.async {
-                    completion(.success(dataModel))
-                }
-            } catch {
-                completion(.failure(.decodingError))
-            }
-        }.resume()
-    }
-    
-    func fetchImage(from url: URL, completion: @escaping(Result<Data, NetworkError>) -> Void) {
-        DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: url) else {
-                completion(.failure(.noData))
-                return
-            }
-            DispatchQueue.main.async {
-                completion(.success(imageData))
-            }
-        }
-    }
-    
-//MARK: - fetch with alamofire
-    func fetchWithAlamofire(from url: URL, completion: @escaping(Result<[Drink], AFError>) -> Void) {
+    func fetch(from url: URL, completion: @escaping(Result<[Drink], AFError>) -> Void) {
         AF.request(Link.drinksLink.url)
             .validate()
             .responseJSON { dataResponse in
@@ -86,7 +50,7 @@ final class NetworkManager {
             }
     }
     
-    func fetchImageWithAlamofire(from url: String, completion: @escaping(Result<Data, AFError>) -> Void) {
+    func fetchImage(from url: String, completion: @escaping(Result<Data, AFError>) -> Void) {
         AF.request(url)
             .validate()
             .responseData { dataResponse in

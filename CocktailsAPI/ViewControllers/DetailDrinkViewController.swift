@@ -22,25 +22,14 @@ final class DetailDrinkViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        loadImage()
-        loadImageAlamofire()
+        loadImage()
         setupLabels()
     }
     
 //MARK: - Private methods
     
-//   private func loadImage() {
-//        DispatchQueue.global().async { [weak self] in
-//            guard let imageData = try? Data(contentsOf: self?.drink.strDrinkThumb ?? "") else { return }
-//            DispatchQueue.main.async { [weak self] in
-//                self?.drinkImage.image = UIImage(data: imageData)
-//                self?.drinkImage.layer.cornerRadius = (self?.drinkImage.frame.width ?? 180) / 2
-//            }
-//        }
-//    }
-    
-    private func loadImageAlamofire() {
-        networkManager.fetchImageWithAlamofire(from: drink.strDrinkThumb) { [weak self] result in
+    private func loadImage() {
+        networkManager.fetchImage(from: drink.strDrinkThumb) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.drinkImage.image = UIImage(data: imageData)
