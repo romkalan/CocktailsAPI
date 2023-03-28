@@ -17,8 +17,8 @@ final class DrinksListViewController: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = 130
         navigationItem.leftBarButtonItem = editButtonItem
-        fetchDrinks()
-//        fetchDrinksWithAlamofire()
+//        fetchDrinks()
+        fetchDrinksWithAlamofire()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

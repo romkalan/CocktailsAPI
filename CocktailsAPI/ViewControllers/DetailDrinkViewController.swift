@@ -51,8 +51,6 @@ final class DetailDrinkViewController: UIViewController {
         }
     }
     
-    
-    
     private func setupLabels() {
         drinkNameLabel.text = drink.strDrink
         drinkCategoryLabel.text = "Category: \(drink.strCategory)"
