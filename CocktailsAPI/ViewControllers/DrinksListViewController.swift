@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Alamofire
 
 final class DrinksListViewController: UITableViewController {
     
@@ -18,8 +17,8 @@ final class DrinksListViewController: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = 130
         navigationItem.leftBarButtonItem = editButtonItem
-//        fetchDrinks()
-        fetchDrinksWithAlamofire()
+        fetchDrinks()
+//        fetchDrinksWithAlamofire()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -38,7 +37,7 @@ final class DrinksListViewController: UITableViewController {
                 strAlcoholic: addNewDrinkVC.isAlcoholicTextField.text ?? "",
                 strGlass: addNewDrinkVC.glassTextField.text ?? "",
                 strInstructions: addNewDrinkVC.recipeTextField.text ?? "",
-                strDrinkThumb: URL(string: addNewDrinkVC.imageTextField.text ?? "") ?? Link.plug.url,
+                strDrinkThumb: addNewDrinkVC.imageTextField.text ?? "",
                 strIngredient1: addNewDrinkVC.ingredientTextField1.text ?? "",
                 strIngredient2: addNewDrinkVC.ingredientTextField2.text ?? "",
                 strIngredient3: addNewDrinkVC.ingredientTextField3.text ?? "",
@@ -138,21 +137,34 @@ extension DrinksListViewController {
         }
     }
     
-    //MARK: - fetch with alamofire
+    //MARK: - fetch with Alamofire
+    
+//    private func fetchDrinksWithAlamofire() {
+//        AF.request(Link.drinksLink.url)
+//            .validate()
+//            .responseJSON { [weak self] dataResponse in
+//                guard let statusCode = dataResponse.response?.statusCode else { return }
+//                print("STATUS CODE: ", statusCode)
+//
+//                switch dataResponse.result {
+//                case .success(let value):
+//                    self?.drinks.drinks = Drink.getDrinks(from: value)
+//                    self?.tableView.reloadData()
+//                case .failure(let error):
+//                    print(error)
+//                }
+//            }
+//    }
     
     private func fetchDrinksWithAlamofire() {
-        AF.request(Link.drinksLink.url)
-            .validate()
-            .responseJSON { dataResponse in
-                guard let statusCode = dataResponse.response?.statusCode else { return }
-                print("STATUS CODE: ", statusCode)
-                switch dataResponse.result {
-                case .success(let value):
-                    guard let drinksData = value as? [String: [String: String?]] else { return }
-                    print(drinksData)
-                case .failure(let error):
-                    print(error)
-                }
+        networkManager.fetchWithAlamofire(from: Link.drinksLink.url) { [weak self] result in
+            switch result {
+            case .success(let drinks):
+                self?.drinks.drinks = drinks
+                self?.tableView.reloadData()
+            case .failure(let error):
+                print(error.localizedDescription)
             }
+        }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum Link {
     case drinksLink
@@ -16,8 +17,7 @@ enum Link {
         case .drinksLink:
            return URL(string: "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")!
         case .plug:
-            return URL(string:
-                "https://runaev.ru/image/cache/placeholder-1000x1000.png")!
+            return URL(string: "https://runaev.ru/image/cache/placeholder-1000x1000.png")!
         }
     }
 }
@@ -69,8 +69,34 @@ final class NetworkManager {
     }
     
 //MARK: - fetch with alamofire
-    func fetchWithAlamofire() {
-        
+    func fetchWithAlamofire(from url: URL, completion: @escaping(Result<[Drink], AFError>) -> Void) {
+        AF.request(Link.drinksLink.url)
+            .validate()
+            .responseJSON { dataResponse in
+                guard let statusCode = dataResponse.response?.statusCode else { return }
+                print("STATUS CODE: ", statusCode)
+                
+                switch dataResponse.result {
+                case .success(let value):
+                    let drinks = Drink.getDrinks(from: value)
+                    completion(.success(drinks))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+    
+    func fetchImageWithAlamofire(from url: String, completion: @escaping(Result<Data, AFError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseData { dataResponse in
+                switch dataResponse.result {
+                case .success(let imageData):
+                    completion(.success(imageData))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
     }
 }
 
