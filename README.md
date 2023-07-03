@@ -27,5 +27,3 @@
 
 ### Стартовый экран после добавления коктейля
 <img width="336" alt="Снимок экрана 2023-07-03 в 11 38 59" src="https://github.com/romkalan/CocktailsAPI/assets/116355331/0f70bd7e-7ced-4671-8093-283a81b9c684">
-
-## Records
